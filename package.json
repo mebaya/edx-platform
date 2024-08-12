@@ -83,7 +83,7 @@
   },
   "devDependencies": {
     "@edx/eslint-config": "^3.1.1",
-    "@edx/mockprock": "github:openedx/mockprock#3ad18c6888e6521e9bf7a4df0db6f8579b928235",
+    "@edx/mockprock": "github:openedx/mockprock#b676073550122e0225f3f835252117c04d364bf6",
     "@edx/stylelint-config-edx": "2.3.3",
     "babel-jest": "26.0.0",
     "enzyme": "3.11.0",
