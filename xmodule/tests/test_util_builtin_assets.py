@@ -9,7 +9,7 @@ from web_fragments.fragment import Fragment, FragmentResource
 from xmodule.util import builtin_assets
 
 
-class AddSassToFragmentTests(TestCase):
+class AddCssToFragmentTests(TestCase):
     """
     Tests for add_css_to_fragment.
 
