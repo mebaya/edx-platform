@@ -863,9 +863,7 @@ class RegistrationValidationView(APIView):
         "country": country_handler
     }
 
-    @method_decorator(
-        ratelimit(key=REAL_IP_KEY, rate=settings.REGISTRATION_VALIDATION_RATELIMIT, method='POST', block=True)
-    )
+
     def post(self, request):
         """
         POST /api/user/v1/validation/registration/

@@ -1124,3 +1124,10 @@ NOTIFICATIONS_EXPIRY = ENV_TOKENS.get('NOTIFICATIONS_EXPIRY', NOTIFICATIONS_EXPI
 EVENT_BUS_PRODUCER_CONFIG = merge_producer_configs(EVENT_BUS_PRODUCER_CONFIG,
                                                    ENV_TOKENS.get('EVENT_BUS_PRODUCER_CONFIG', {}))
 BEAMER_PRODUCT_ID = ENV_TOKENS.get('BEAMER_PRODUCT_ID', BEAMER_PRODUCT_ID)
+
+# .. setting_name: DISABLED_COUNTRIES_FROM_USER_REGISTRATION_FORM
+# .. setting_default: []
+# .. setting_description: List of country codes that should be disabled in the user registration form.
+# .. eg ['US', 'CA']
+# .. Country Codes Alpha-2 : https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+DISABLED_COUNTRIES_IN_USER_REGISTRATION_FORM = ENV_TOKENS.get('DISABLED_COUNTRIES_IN_USER_REGISTRATION_FORM', ['RU'])

@@ -3,6 +3,8 @@ User Auth Views Utils
 """
 import logging
 import re
+from typing import Dict
+
 from django.conf import settings
 from django.contrib import messages
 from django.utils.translation import gettext as _
@@ -17,6 +19,8 @@ from openedx.core.djangoapps.geoinfo.api import country_code_from_ip
 import random
 import string
 from datetime import datetime
+
+from openedx.core.djangoapps.user_authn.config.waffle import ENABLE_COUNTRY_DISABLING
 
 log = logging.getLogger(__name__)
 API_V1 = 'v1'
@@ -177,3 +181,23 @@ def get_auto_generated_username(data):
     # We generate the username regardless of whether the name is empty or invalid. We do this
     # because the name validations occur later, ensuring that users cannot create an account without a valid name.
     return f"{username_prefix}_{username_suffix}" if username_prefix else username_suffix
+
+
+def remove_disabled_country_from_list(countries: Dict) -> Dict:
+    """
+    Remove disabled countries from the list of countries.
+
+    Args:
+    - countries (dict): List of countries.
+
+    Returns:
+    - dict: Dict of countries with disabled countries removed.
+    """
+    enabled_countries = {}
+    if ENABLE_COUNTRY_DISABLING.is_enabled():
+        for code, name in countries.items():
+            if code not in settings.DISABLED_COUNTRIES_IN_USER_REGISTRATION_FORM:
+                enabled_countries[code] = name
+        return enabled_countries
+
+    return countries

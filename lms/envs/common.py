@@ -5544,3 +5544,10 @@ SURVEY_REPORT_CHECK_THRESHOLD = 6
 # .. setting_default: empty dictionary
 # .. setting_description: Dictionary with additional information that you want to share in the report.
 SURVEY_REPORT_EXTRA_DATA = {}
+
+
+# .. setting_name: DISABLED_COUNTRIES_FROM_USER_REGISTRATION_FORM
+# .. setting_default: []
+# .. setting_description: List of country codes that should be disabled in the user registration form.
+# .. eg ['US', 'CA']
+DISABLED_COUNTRIES_IN_USER_REGISTRATION_FORM = []
