@@ -27,12 +27,16 @@ However, we are proactively working towards a system where:
 Themable CSS (.css)
 *********************
 
-The CSS for an XBlock's ``student_view``, ``author_view``, and ``public_view`` is located in the ``xmodule/assets`` directory and follows the naming convention ``<ClassName>BlockDisplay.css``.
-The CSS for an XBlock's ``studio_view`` is also located in the ``xmodule/assets`` directory and follows the naming convention ``<ClassName>BlockEditor.css``.
+The CSS for an XBlock's ``student_view``, ``author_view``, and ``public_view``
+is located in the ``xmodule/assets`` directory and follows the naming
+convention ``<ClassName>BlockDisplay.css``.
 
-These css files can be linked to Xblock via ``add_css_url`` or ``add_css`` methods in `fragments.py`_ class
+The CSS for an XBlock's ``studio_view`` is also located in the
+``xmodule/assets`` directory and follows the naming convention
+``<ClassName>BlockEditor.css``.
 
-.. _fragment.py: https://github.com/openedx/web-fragments/blob/master/web_fragments/fragment.py
+These css files can be linked to Xblock via ``add_css_url`` or ``add_css``
+methods in ``Fragment`` class from `fragment.py`_ module.
 
 
 JavaScript (.js)
@@ -68,7 +72,6 @@ As part of an `active build refactoring`_, we will soon consolidate all edx-plat
 .. _LibraryContentBlock: https://github.com/openedx/edx-platform/blob/master/xmodule/library_content_block.py
 .. _active build refactoring: https://github.com/openedx/edx-platform/issues/31624
 .. _builtin_assets.py: https://github.com/openedx/edx-platform/tree/master/xmodule/util/builtin_assets.py
-.. _static_content.py: https://github.com/openedx/edx-platform/blob/master/xmodule/static_content.py
-.. _library_source_block/style.css: https://github.com/openedx/edx-platform/blob/master/xmodule/assets/library_source_block/style.css
+.. _fragment.py: https://github.com/openedx/web-fragments/blob/master/web_fragments/fragment.py
 .. _webpack.builtinblocks.config.js: https://github.com/openedx/edx-platform/blob/master/webpack.builtinblocks.config.js
 .. _webpack.common.config.js: https://github.com/openedx/edx-platform/blob/master/webpack.common.config.js
