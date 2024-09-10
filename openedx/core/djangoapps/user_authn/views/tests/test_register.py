@@ -2472,7 +2472,7 @@ class RegistrationViewTestV2(RegistrationViewTestV1):
         assert response.status_code == 400
 
     @override_waffle_switch(ENABLE_COUNTRY_DISABLING, True)
-    @override_settings(DISABLED_COUNTRIES_IN_USER_REGISTRATION_FORM=['KP'])
+    @override_settings(DISABLED=['KP'])
     def test_register_with_disabled_country(self):
         """
         Test case to check user registration is forbidden when registration is disabled for a country

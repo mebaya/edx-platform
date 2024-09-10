@@ -577,7 +577,7 @@ class TestAccountApi(UserSettingsEventTestMixin, EmailTemplateTagMixin, CreateAc
         assert account_settings['state'] is None
 
     @override_waffle_switch(ENABLE_COUNTRY_DISABLING, active=True)
-    @override_settings(DISABLED_COUNTRIES_IN_USER_REGISTRATION_FORM=['KP'])
+    @override_settings(DISABLED_COUNTRIES=['KP'])
     def test_change_to_disabled_country(self):
         """
         Test that changing the country to a disabled country is not allowed

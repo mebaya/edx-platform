@@ -2,10 +2,8 @@
 Waffle flags and switches for user authn.
 """
 
-
 from edx_toggles.toggles import WaffleSwitch
 
-from openedx.core.djangoapps.waffle_utils import CourseWaffleFlag
 
 _WAFFLE_NAMESPACE = 'user_authn'
 
@@ -35,7 +33,6 @@ ENABLE_PWNED_PASSWORD_API = WaffleSwitch(
     f'{_WAFFLE_NAMESPACE}.enable_pwned_password_api', __name__
 )
 
-
 # .. toggle_name: user_authn.enable_country_disabling
 # .. toggle_implementation: WaffleSwitch
 # .. toggle_default: False
@@ -45,4 +42,4 @@ ENABLE_PWNED_PASSWORD_API = WaffleSwitch(
 # .. toggle_target_removal_date: 2021-12-31
 # .. toggle_warning: When the flag is ON, the feature of disabling registration from specific countries is enabled.
 # .. toggle_tickets: VAN-664
-ENABLE_COUNTRY_DISABLING = WaffleSwitch( f'{_WAFFLE_NAMESPACE}.enable_country_disabling', __name__ )
+ENABLE_COUNTRY_DISABLING = WaffleSwitch(f'{_WAFFLE_NAMESPACE}.enable_country_disabling', __name__)

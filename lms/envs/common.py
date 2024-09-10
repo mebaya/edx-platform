@@ -5546,8 +5546,9 @@ SURVEY_REPORT_CHECK_THRESHOLD = 6
 SURVEY_REPORT_EXTRA_DATA = {}
 
 
-# .. setting_name: DISABLED_COUNTRIES_FROM_USER_REGISTRATION_FORM
+# .. setting_name: DISABLED_COUNTRIES
 # .. setting_default: []
-# .. setting_description: List of country codes that should be disabled in the user registration form.
+# .. setting_description: List of country codes that should be disabled
+# .. for now it wil impact country listing in auth flow and user profile.
 # .. eg ['US', 'CA']
-DISABLED_COUNTRIES_IN_USER_REGISTRATION_FORM = []
+DISABLED_COUNTRIES = []

@@ -299,17 +299,15 @@ class AccountCreationForm(forms.Form):
             if key in self.extended_profile_fields and value is not None
         }
 
-
     def clean_country(self):
         """
         Check if the user's country is in the embargoed countries list.
         """
         if ENABLE_COUNTRY_DISABLING.is_enabled():
             country = self.cleaned_data.get("country")
-            if country in settings.DISABLED_COUNTRIES_IN_USER_REGISTRATION_FORM:
+            if country in settings.DISABLED_COUNTRIES:
                 raise ValidationError(_("Registration from this country is not allowed due to restrictions."))
         return self.cleaned_data.get("country")
-
 
 
 def get_registration_extension_form(*args, **kwargs):
@@ -700,7 +698,7 @@ class RegistrationFormFactory:
         """
         opt_in_label = _(
             'I agree that {platform_name} may send me marketing messages.').format(
-                platform_name=configuration_helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME),
+            platform_name=configuration_helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME),
         )
 
         form_desc.add_field(

@@ -193,11 +193,7 @@ def remove_disabled_country_from_list(countries: Dict) -> Dict:
     Returns:
     - dict: Dict of countries with disabled countries removed.
     """
-    enabled_countries = {}
     if ENABLE_COUNTRY_DISABLING.is_enabled():
-        for code, name in countries.items():
-            if code not in settings.DISABLED_COUNTRIES_IN_USER_REGISTRATION_FORM:
-                enabled_countries[code] = name
-        return enabled_countries
-
+        for country_code in settings.DISABLED_COUNTRIES:
+            del countries[country_code]
     return countries
